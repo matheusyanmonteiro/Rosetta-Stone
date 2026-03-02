@@ -1,0 +1,25 @@
+{
+  "home": {
+    "title": "My Portfolio",
+    "subtitle": "Software Engineer"
+  },
+  "blog": {
+    "title": "Articles & Insights"
+  },
+  "projects": [
+    {
+      "title": "Pipeline de ETL",
+      "description": "developing test engine...",
+      "techStack": ["Node.js", "TypeScript"],
+      "category": "Data Engineering",
+      "githubUrl": "https://github.com/..."
+    },
+    {
+      "title": "another de ETL",
+      "description": "developing test engine...",
+      "techStack": ["Node.js", "TypeScript"],
+      "category": "Data Engineering",
+      "githubUrl": "https://github.com/..."
+    }
+  ]
+}

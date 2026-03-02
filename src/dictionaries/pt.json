@@ -1,0 +1,18 @@
+{
+  "home": {
+    "title": "Meu Portfólio",
+    "subtitle": "Engenheiro de Software"
+  },
+  "blog": {
+    "title": "Artigos e Insights"
+  },
+  "projects": [
+    {
+      "title": "Pipeline de ETL",
+      "description": "Desenvolvimento de um motor...",
+      "techStack": ["Node.js", "TypeScript"],
+      "category": "Data Engineering",
+      "githubUrl": "https://github.com/..."
+    }
+  ]
+}
