@@ -1,20 +1,120 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-secondary: hsl(var(--secondary));
+  --color-border: hsl(var(--border));
+  
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-mono: "Share Tech Mono", monospace;
+  --font-body: "Rajdhani", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 220 20% 4%;
+    --foreground: 180 100% 80%;
+    --primary: 180 100% 50%;
+    --secondary: 120 100% 40%;
+    --border: 180 60% 15%;
+    
+    --neon-cyan: 180 100% 50%;
+    --neon-green: 120 100% 45%;
+    --neon-magenta: 300 100% 60%;
   }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-body);
+    @apply antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3 { font-family: var(--font-orbitron); }
+  code, pre { font-family: var(--font-mono); }
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: sans-serif;
+/* EFEITOS VISUAIS */
+.scanlines {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    hsl(180 100% 50% / 0.015) 2px,
+    hsl(180 100% 50% / 0.015) 4px
+  );
+}
+
+.crt-flicker {
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.97; }
+  50% { opacity: 1; }
+  100% { opacity: 0.98; }
+}
+
+.glow-cyan {
+  text-shadow: 0 0 7px hsl(180 100% 50% / 0.8), 0 0 10px hsl(180 100% 50% / 0.5);
+}
+
+.glitch {
+  position: relative;
+}
+
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.glitch::before {
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  color: hsl(var(--primary));
+}
+
+.glitch::after {
+  animation: glitch-anim-2 2s infinite linear alternate-reverse;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  color: hsl(300 100% 60%);
+}
+
+@keyframes glitch-anim-1 {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 3px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { transform: translate(0); }
+  20% { transform: translate(3px, -3px); }
+  100% { transform: translate(0); }
+}
+
+.retro-border {
+  border: 1px solid transparent;
+  background: 
+    linear-gradient(hsl(var(--background)), hsl(var(--background))) padding-box,
+    linear-gradient(90deg, hsl(var(--primary)), hsl(300 100% 60%), hsl(120 100% 45%), hsl(var(--primary))) border-box;
+  background-size: 100% 100%, 300% 100%;
+  animation: border-flow 4s ease infinite;
+}
+
+@keyframes border-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

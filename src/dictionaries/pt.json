@@ -14,5 +14,59 @@
       "category": "Data Engineering",
       "githubUrl": "https://github.com/..."
     }
-  ]
+  ],
+  "experience": [
+    {
+      "company": "Sagres",
+      "role": "Engenheiro de Software Júnior",
+      "period": "Fev. 2024 — Atual",
+      "description": "Atuação estratégica em Engenharia de Dados, desenvolvendo pipelines de ETL complexos e implementando estratégias de DataOps com foco em virtualização de dados (Delphix) e conformidade com LGPD."
+    },
+    {
+      "company": "EDOO",
+      "role": "Engenheiro de Software",
+      "period": "Jan. 2023 — Jan. 2024",
+      "description": "Desenvolvimento Fullstack com Node.js e Angular, focado em APIs resilientes e interfaces performáticas, além da liderança técnica em políticas de internacionalização."
+    },
+    {
+      "company": "Descomplica",
+      "role": "Engenheiro de Software Trainee",
+      "period": "Jul. 2022 — Dez. 2022",
+      "description": "Desenvolvimento ágil utilizando NestJS, React e Terraform em ambiente AWS, focando na otimização de processos de onboarding."
+    },
+    {
+      "company": "CONFEA",
+      "role": "Engenheiro de Software Trainee",
+      "period": "Jan. 2021 — Mai. 2022",
+      "description": "Refatoração de sistemas legados para microserviços utilizando .NET 6, C# e arquitetura orientada a eventos com RabbitMQ."
+    }
+  ],
+  "hero": {
+    "phrases": ["Engenheiro de Software", "Especialista em ETL", "Problem Solver"]
+  },
+  "nav": {
+    "about": "// SOBRE",
+    "projects": "// PROJETOS",
+    "blog": "// BLOG",
+    "contact": "// CONTATO"
+  },
+  "home": {
+    "title": "SISTEMA_CARREGADO",
+    "viewProjects": "VER PROJETOS",
+    "downloadCv": "BAIXAR CV"
+  },
+  "about": {
+    "title": "// SOBRE MIM",
+    "name": "Matheus Monteiro",
+    "location": "Brasília, Brasil",
+    "experience": "4+ anos",
+    "focus": "Arquiteturas escaláveis e Engenharia de Dados",
+    "passion": "Transformar fluxos complexos em código elegante",
+    "description": "Engenheiro de Software com sólida experiência em desenvolvimento Fullcycle e Engenharia de Dados. Apaixonado por tecnologia desde a era dos terminais. Foco em reduzir o 'data friction' e garantir alta disponibilidade."
+  },
+  "contact": {
+    "title": "// CONTATO",
+    "subtitle": "Pronto para construir sistemas resilientes juntos?",
+    "status": "SISTEMA ONLINE"
+  }
 }

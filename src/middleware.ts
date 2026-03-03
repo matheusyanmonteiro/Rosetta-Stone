@@ -19,7 +19,13 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   // O matcher é vital para o Next.js não tentar rodar o middleware em arquivos estáticos
-  matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|content|.*\\.png$).*)',
+ matcher: [
+    /*
+     * Ignore todos os caminhos que:
+     * 1. Contenham extensões de arquivos (imagens, pdfs, etc)
+     * 2. Comecem com _next (arquivos internos do framework)
+     * 3. Comecem com api (suas rotas de API)
+     */
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.pdf$|.*\\.png$|.*\\.jpg$|.*\\.svg$).*)',
   ],
 }
