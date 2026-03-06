@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = ({ dict }: { dict: any }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -46,6 +47,7 @@ const Navbar = ({ dict }: { dict: any }) => {
            <div className="text-primary text-[10px] tracking-widest opacity-60 border border-primary/30 px-2 py-0.5">
             v1.0.0
           </div>
+          <LanguageSwitcher />
         </div>
       </div>
     </nav>
