@@ -2,6 +2,9 @@ import { Orbitron, Share_Tech_Mono, Rajdhani } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import ThemeVisuals from "@/components/ThemeVisuals";
+import Navbar from "@/components/Navbar";
+import AudioPlayer from "@/components/AudioPlayer";
+import { getDictionary } from "@/lib/get-dictionary";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -26,19 +29,20 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ lang: string }>;
+  params: Promise<{ lang: any }>;
 }) {
   const { lang } = await params;
+    const dict = await getDictionary(lang);
 
   return (
     <html lang={lang} suppressHydrationWarning> 
       <body className="antialiased overflow-x-hidden font-body bg-background text-foreground">
-        <ThemeProvider>
-          <ThemeVisuals />
-          <div className="relative z-10">
-            {children}
-          </div>
-        </ThemeProvider>
+      <ThemeProvider>
+      <ThemeVisuals />
+      <Navbar dict={dict} />
+      {children}
+      <AudioPlayer /> {/* Ele fica no canto oposto ao MobileMenu */}
+</ThemeProvider>
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import ThemeVisuals from "@/components/ThemeVisuals"; // Importe o gerenciador
 import { getDictionary } from "@/lib/get-dictionary";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import Terminal from "@/components/Terminal";
 
 export default async function Page({ params }: { params: Promise<{ lang: any }> }) {
   const { lang } = await params;
@@ -12,15 +13,21 @@ export default async function Page({ params }: { params: Promise<{ lang: any }> 
 
   return (
     <>
-      {/* O ThemeVisuals cuida do MatrixRain vs NeuromancerBackground internamente */}
       <ThemeVisuals />
-      
       <Navbar dict={dict} />
       
       <main className="relative z-10">
         <HeroSection dict={dict} />
+        
+        
+
         <AboutSection dict={dict} />
         <ProjectsSection dict={dict} />
+        
+        <section className="container mx-auto px-6 py-10">
+          <Terminal dict={dict} lang={lang} />
+        </section>
+        
         <ContactSection dict={dict} />
       </main>
     </>

@@ -33,7 +33,5 @@ export function proxy(request: NextRequest) {
 
 // 2. CONFIGURAÇÃO DO MATCHER (Igual ao antigo middleware)
 export const config = {
-  matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.pdf).*)',
-  ],
+  matcher:'/((?!api|_next/static|_next/image|favicon.ico|.*\\.pdf|.*\\.mp3).*)',
 };

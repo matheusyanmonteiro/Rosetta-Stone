@@ -1,5 +1,7 @@
 'use client';
 
+import DecryptText from "./DecryptText";
+
 const ProjectsSection = ({ dict }: { dict: any }) => {
   return (
     <section id="projects" className="relative py-32 px-6 z-10">
@@ -23,7 +25,7 @@ const ProjectsSection = ({ dict }: { dict: any }) => {
               <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-primary/50" />
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-display text-lg tracking-wider text-primary group-hover:glow-cyan">
-                  {project.title}
+                  <DecryptText text={project.title}/>
                 </h3>
                 <span className="font-mono text-[10px] tracking-widest px-2 py-1 text-secondary border border-secondary/30 bg-secondary/5">
                   DEPLOYED
