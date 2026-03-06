@@ -30,7 +30,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   }, [theme, mounted]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "matrix" ? "neuromancer" : "matrix"));
+    setTheme((prev) => (prev === "neuromancer" ? "matrix" : "neuromancer"));
   };
 
   return (
